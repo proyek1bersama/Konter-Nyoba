@@ -122,7 +122,9 @@
     .slider-wrapper {
       display: flex;
       justify-content: center;
-      margin: 30px 0;
+      align-items: center;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
     #sliderCreativeCell {
@@ -132,40 +134,52 @@
       position: relative;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-
-
-    #sliderCreativeCell .carousel-item img {
-      width: 75%;
+    .carousel-inner {
       height: 100%;
-      object-fit: cover;
-
-    }
-
-    .slider-wrapper {
       display: flex;
-      justify-content: center;
-      margin: 60px auto;
-      padding: 0 20px;
+      align-items: center;
     }
 
+    .carousel-item {
+      height: 100%;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+      padding: 20px;
+    }
 
-    /* tombol prev/next lebih ramping dan pas di pinggir */
+    .carousel-item img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* tombol navigasi */
     .carousel-control-prev,
     .carousel-control-next {
-      width: 40px;
+      width: 50px;
       top: 50%;
       transform: translateY(-50%);
     }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.4);
       width: 30px;
       height: 30px;
+      border-radius: 50%;
     }
+
+
+
 
     .card {
       background-color: rgba(0, 0, 0, 0);
@@ -404,19 +418,19 @@
   </header>
 
   <div class="slider-wrapper">
-    <div id="sliderCreativeCell" class="carousel slide" data-bs-ride="carousel">
+    <div id="sliderCreativeCell" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/ket1.png" class="d-block" alt="Promo 1">
+          <img src="images/ket1.jpg" class="d-block mx-auto" alt="Promo 1">
         </div>
         <div class="carousel-item">
-          <img src="images/ket2.png" class="d-block" alt="Promo 2">
+          <img src="images/ket2.jpg" class="d-block mx-auto" alt="Promo 2">
         </div>
         <div class="carousel-item">
-          <img src="images/ket3.png" class="d-block" alt="Promo 3">
+          <img src="images/ket3.jpg" class="d-block mx-auto" alt="Promo 3">
         </div>
         <div class="carousel-item">
-          <img src="images/ket4.png" class="d-block" alt="Promo 4">
+          <img src="images/ket4.jpg" class="d-block mx-auto" alt="Promo 4">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderCreativeCell" data-bs-slide="prev">
@@ -427,6 +441,8 @@
       </button>
     </div>
   </div>
+
+
 
   <section id="layanan" class="py-5">
     <div class="container">
@@ -473,7 +489,7 @@
                   <div class="card-body text-center">
                     <img src="images/logo indosat.png" alt="Logo Indosat" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Indosat</h5>
-                    <p class="card-text">Paket Internet dan Nelpon Lengkap.</p>
+                    <p class="card-text">Paket Internet & Nelpon Lengkap.</p>
                   </div>
                 </div>
               </a>
