@@ -35,7 +35,7 @@
     .navbar-brand,
     .nav-link {
       color: #fff !important;
-      font-weight: 50px;
+      font-weight: 500;
       font-size: 20px;
     }
 
@@ -47,8 +47,10 @@
         0 2px 4px rgba(0, 0, 0, 0.7),
         0 4px 8px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.5);
-    }
-
+    } 
+    .navbar-toggler-icon {
+  filter: invert(1);
+}
 
     .header-section {
       margin-top: 100px;
@@ -203,7 +205,7 @@
     #layanan h2 {
       font-size: 50px;
       /* ubah ukuran sesuai keinginan */
-      color: #1a1a1a;
+      color: #ffffff;
       /* warna judul */
       font-weight: 700;
       margin-bottom: 40px;
@@ -224,6 +226,12 @@
     }
 
     /* animasi masuk dari kiri */
+    .animate-left,
+.animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease-in-out;
+}
     .animate-left {
       opacity: 0;
       transform: translateX(-50px);
@@ -233,7 +241,7 @@
     .animate-left.show {
       opacity: 1;
       transform: translateX(0);
-    }
+    } 
 
     /* animasi masuk dari kanan */
     .animate-right {
@@ -349,6 +357,16 @@
       color: white;
       /* teks jadi putih saat hover */
     }
+
+
+@media (max-width: 768px) {
+  .animate-left, .animate-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
   </style>
 </head>
 
@@ -368,7 +386,7 @@
       <!-- isi menu -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
-          <li class="nav-item">
+          <li class="nav-item"> 
             <a class="nav-link active" href="#">Beranda</a>
           </li>
           <li class="nav-item">
@@ -399,7 +417,10 @@
       <div class="row align-items-center text-center text-md-start">
         <!-- bagian teks -->
         <div class="col-md-8 custom-header">
-          <h1 class="display-4 fw-bold animate animate-from-top">Selamat Datang di Creative Cell!</h1>
+        <h1 class="display-4 fw-bold animate animate-from-top">
+  <span style="color: rgb(255, 255, 255);">Selamat Datang di </span>
+  <span style="color: rgb(0, 0, 0);">Creative Cell!</span>
+</h1>
           <p class="animate animate-from-bottom">
             Halo! 👋👋👋 <br> Di Creative Cell, kamu bisa beli berbagai jenis voucher digital dengan cara yang cepat,
             gampang,
@@ -444,214 +465,197 @@
 
 
 
-  <section id="layanan" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Layanan Kami</h2>
-      <div class="row">
-        <!-- gambar di sebelah kiri -->
-        <div class="col-md-4 d-flex align-items-center justify-content-center mb-4 mb-md-0 animate-left">
-          <img src="images/endul.png" alt="Ilustrasi Layanan" class="custom-image">
-        </div>
+    <section id="layanan" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Layanan Kami</h2>
+        <div class="row">
+          <!-- gambar di sebelah kiri -->
+          <div class="col-md-4 d-flex align-items-center justify-content-center mb-4 mb-md-0 animate-left">
+            <img src="images/endul.png" alt="Ilustrasi Layanan" class="custom-image">
+          </div>
 
-        <!-- kolom kanan untuk kartu voucher -->
-        <div class="col-md-8 animate-right">
-          <div class="row">
-            <!-- kolom 1 -->
-            <div class="col-md-6 mb-4">
-              <a href="xl.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo xl.png" alt="Logo XL" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher XL</h5>
-                    <p class="card-text">Kuota Stabil & Jaringan Luas.</p>
+          <!-- kolom kanan untuk kartu voucher -->
+          <div class="col-md-8 animate-right">
+            <div class="row">
+              <!-- kolom 1 -->
+              <div class="col-md-6 mb-4">
+                <a href="xl.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo xl.png" alt="Logo XL" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher XL</h5>
+                      <p class="card-text">Kuota Stabil & Jaringan Luas.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <!-- kolom 2 -->
-            <div class="col-md-6 mb-4">
-              <a href="axis.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo axis.png" alt="Logo Axis" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Axis</h5>
-                    <p class="card-text">Paket Internet & Nelpon Murah.</p>
+              <!-- kolom 2 -->
+              <div class="col-md-6 mb-4">
+                <a href="axis.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo axis.png" alt="Logo Axis" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher Axis</h5>
+                      <p class="card-text">Paket Internet & Nelpon Murah.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <!-- kolom 3 -->
-            <div class="col-md-6 mb-4">
-              <a href="indosat.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo indosat.png" alt="Logo Indosat" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Indosat</h5>
-                    <p class="card-text">Paket Internet & Nelpon Lengkap.</p>
+              <!-- kolom 3 -->
+              <div class="col-md-6 mb-4">
+                <a href="indosat.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo indosat.png" alt="Logo Indosat" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher Indosat</h5>
+                      <p class="card-text">Paket Internet & Nelpon Lengkap.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <!-- kolom 4 -->
-            <div class="col-md-6 mb-4">
-              <a href="smartfren.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo smartfren.png" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Smartfren</h5>
-                    <p class="card-text">Internet Stabil & Harga Bersahabat.</p>
+              <!-- kolom 4 -->
+              <div class="col-md-6 mb-4">
+                <a href="smartfren.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo smartfren.png" alt="Logo Smartfren" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher Smartfren</h5>
+                      <p class="card-text">Internet Stabil & Harga Bersahabat.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <!-- kolom 5 -->
-            <div class="col-md-6 mb-4">
-              <a href="smartfren.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo tri.png" alt="Logo Tri" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Tri</h5>
-                    <p class="card-text">Kuota Melimpah & Jaringan Anak Muda.</p>
+              <!-- kolom 5 -->
+              <div class="col-md-6 mb-4">
+                <a href="tri.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo tri.png" alt="Logo Tri" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher Tri</h5>
+                      <p class="card-text">Kuota Melimpah & Jaringan Anak Muda.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
+                </a>
+              </div>
 
-            <!-- kolom 6 -->
-            <div class="col-md-6 mb-4">
-              <a href="smartfren.html" class="text-decoration-none text-dark">
-                <div class="card shadow-sm h-100">
-                  <div class="card-body text-center">
-                    <img src="images/logo telkom.png" alt="Logo Telkomsel" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Telkomsel</h5>
-                    <p class="card-text">Sinyal Kuat & Akses Cepat di Mana Saja.</p>
+              <!-- kolom 6 -->
+              <div class="col-md-6 mb-4">
+                <a href="telkom.html" class="text-decoration-none text-dark">
+                  <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                      <img src="images/logo telkom.png" alt="Logo Telkomsel" class="mb-3 logo-layanan">
+                      <h5 class="card-title">Voucher Telkomsel</h5>
+                      <p class="card-text">Sinyal Kuat & Akses Cepat di Mana Saja.</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </div>
-  </section>
+                </a>
+              </div>
+    </section>
 
-  <section id="kontak" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Hubungi Kami</h2>
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <form>
-            <div class="mb-3 kontak-slide-left" id="anim-nama">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-right" id="anim-email">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-left" id="anim-pesan">
-              <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
-            </div>
-            <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
-              <button type="submit" class="btn btn-primary">Kirim</button>
-          </form>
+    <section id="kontak" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Hubungi Kami</h2>
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <form>
+              <div class="mb-3 kontak-slide-left" id="anim-nama">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
+              </div>
+              <div class="mb-3 kontak-slide-right" id="anim-email">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
+              </div>
+              <div class="mb-3 kontak-slide-left" id="anim-pesan">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
+              </div>
+              <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="text-center py-3">
-    <p>&copy; 2023 Creative Cell. All rights reserved.</p>
-  </footer>
+    <footer class="text-center py-3">
+      <p>&copy; 2023 Creative Cell. All rights reserved.</p>
+    </footer>
 
-  <script>
-    function handleScrollAnimation() {
-      const elements = document.querySelectorAll('.animate');
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ========================
+    // KONFIGURASI OBSERVER
+    // ========================
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+     threshold: 0
+    };
 
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+  const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    console.log("observed:", entry.target, "intersecting:", entry.isIntersecting); // <--- debug
 
-        if (inView) {
-          el.classList.add('show');
-        } else {
-          el.classList.remove('show'); // supaya animasi bisa diputar ulang saat scroll naik lagi
-        }
-      });
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
     }
+  });
+};
 
-    window.addEventListener('scroll', handleScrollAnimation);
-    window.addEventListener('load', handleScrollAnimation);
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
 
+    // ========================
+    // OBSERVE SEMUA ELEMEN ANIMASI
+    // Pastikan class .animate juga ditambahkan di HTML
+    // ========================
+    const animateElements = document.querySelectorAll(".animate-left, .animate-right, .animate");
+    animateElements.forEach((el) => observer.observe(el));
 
-    document.addEventListener("DOMContentLoaded", function () {
-      // observer untuk layanan
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.6,
-      };
+    // ========================
+    // ANIMASI KHUSUS FORM KONTAK
+    // ========================
+    const kontakElements = [
+      document.getElementById("anim-nama"),
+      document.getElementById("anim-email"),
+      document.getElementById("anim-pesan"),
+      document.getElementById("anim-button"),
+    ];
 
-      const observerCallback = (entries, observer) => {
+    const kontakObserver = new IntersectionObserver(
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            kontakElements.forEach((el) => el.classList.remove("kontak-show"));
+            setTimeout(() => kontakElements[0].classList.add("kontak-show"), 200);
+            setTimeout(() => kontakElements[1].classList.add("kontak-show"), 400);
+            setTimeout(() => kontakElements[2].classList.add("kontak-show"), 600);
+            setTimeout(() => kontakElements[3].classList.add("kontak-show"), 800);
           } else {
-            entry.target.classList.remove("show");
+            kontakElements.forEach((el) => el.classList.remove("kontak-show"));
           }
         });
-      };
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2,
+      }
+    );
 
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const kontakSection = document.getElementById("kontak");
+    kontakObserver.observe(kontakSection);
+  });
+</script>
 
-      const animateElements = document.querySelectorAll(".animate-left, .animate-right");
-      animateElements.forEach((el) => observer.observe(el));
 
-      // observer untuk kontak
-      const kontakElements = [
-        document.getElementById("anim-nama"),
-        document.getElementById("anim-email"),
-        document.getElementById("anim-pesan"),
-        document.getElementById("anim-button"),
-      ];
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 
-      // gunakan observer juga untuk setiap elemen kontak supaya animasi aktif saat scroll
-      kontakElements.forEach((el) => {
-        if (!el) return;
-        observer.observe(el);
-      });
-
-      // callback observer kontak yang berbeda supaya delay animasi bisa dijalankan bertahap
-      const kontakObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              // jalankan animasi bertahap dengan delay saat form mulai terlihat
-              kontakElements.forEach((el) => el.classList.remove("kontak-show"));
-              setTimeout(() => kontakElements[0].classList.add("kontak-show"), 200);
-              setTimeout(() => kontakElements[1].classList.add("kontak-show"), 400);
-              setTimeout(() => kontakElements[2].classList.add("kontak-show"), 600);
-              setTimeout(() => kontakElements[3].classList.add("kontak-show"), 800);
-            } else {
-              kontakElements.forEach((el) => el.classList.remove("kontak-show"));
-            }
-          });
-        },
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.2,
-        }
-      );
-
-      // observe bagian form kontak (bisa pakai form atau section #kontak)
-      const kontakSection = document.getElementById("kontak");
-      kontakObserver.observe(kontakSection);
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+  </html>
