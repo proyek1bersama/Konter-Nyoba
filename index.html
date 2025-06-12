@@ -37,7 +37,7 @@
   filter: invert(1);
 }
 
-/* === LINK NAVBAR === */
+/* link navbar */
 .nav-link {
   position: relative;
   display: inline-block;
@@ -57,24 +57,23 @@
     0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* === LINK YANG AKTIF === */
+/* link yang aktif */
 .nav-link.active {
   font-weight: 600;
 }
 
-/* === GARIS BAWAH UNTUK LINK AKTIF === */
 .nav-link.active::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 12px;
-  width: calc(100% - 24px); /* Hindari mentok kiri-kanan */
+  width: calc(100% - 24px); 
   height: 3px;
   background-color: #fff;
   border-radius: 2px;
 }
 
-/* === RESPONSIVE DI LAYAR KECIL === */
+/* responsive layar kecil */
 @media (max-width: 768px) {
   .navbar-nav {
     text-align: center;
@@ -87,6 +86,8 @@
     width: 100%;
   }
 }
+
+/* header */
     .header-section {
       margin-top: 100px;
       padding: 100px;
@@ -156,8 +157,8 @@
       }
     }
 
-    /* slider gambar next */
-    .slider-wrapper {
+  /* slider gambar next */
+  .slider-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
