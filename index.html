@@ -26,32 +26,67 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-    .navbar {
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      height: 70px;
-    }
+    /* === NAVBAR STYLING UTAMA === */
+.navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 70px;
+}
 
-    .navbar-brand,
-    .nav-link {
-      color: #fff !important;
-      font-weight: 500;
-      font-size: 20px;
-    }
-
-    .navbar .nav-link:hover {
-      transform: translateY(-3px);
-      color: #ffffff;
-      /* warna putih cerah biar kontras */
-      text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.7),
-        0 4px 8px rgba(0, 0, 0, 0.6),
-        0 6px 12px rgba(0, 0, 0, 0.5);
-    } 
-    .navbar-toggler-icon {
+.navbar-toggler-icon {
   filter: invert(1);
 }
 
+/* === LINK NAVBAR === */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* === LINK YANG AKTIF === */
+.nav-link.active {
+  font-weight: 600;
+}
+
+/* === GARIS BAWAH UNTUK LINK AKTIF === */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: calc(100% - 24px); /* Hindari mentok kiri-kanan */
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* === RESPONSIVE DI LAYAR KECIL === */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 6px 10px;
+    display: inline-block;
+    width: 100%;
+  }
+}
     .header-section {
       margin-top: 100px;
       padding: 100px;
@@ -385,7 +420,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
           <li class="nav-item"> 
-            <a class="nav-link active" href="#">Beranda</a>
+            <a class="nav-link active" href="#beranda">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#layanan">Layanan</a>
@@ -410,6 +445,7 @@
 
 
   <!-- header -->
+   <section id="beranda" class="py-5"></section>
   <header class="header-section text-dark py-5">
     <div class="container">
       <div class="row align-items-center text-center text-md-start">
@@ -585,6 +621,28 @@
     </footer>
 
     <script>
+     
+  window.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    let currentSection = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active");
+      }
+    });
+  });
+
   document.addEventListener("DOMContentLoaded", function () {
     // ========================
     // KONFIGURASI OBSERVER
