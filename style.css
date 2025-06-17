@@ -1,0 +1,391 @@
+ body {
+      min-height: 100vh;
+      background: linear-gradient(to bottom right,
+          #c8455d 0%,
+          #c23f56 10%,
+          #a0334c 25%,
+          #7e2a40 45%,
+          #5a1b34 65%,
+          #2f0d19 80%,
+          #1e0712 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: white;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+/* === navbar utama */
+.navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 70px;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* link navbar */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* link yang aktif */
+.nav-link.active {
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: calc(100% - 24px); 
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* responsive layar kecil */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 6px 10px;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+/* header */
+    .header-section {
+      margin-top: 100px;
+      padding: 100px;
+    }
+
+    .custom-header p {
+      text-align: justify;
+      color: white;
+      font-size: 18px;
+    }
+
+    .animate {
+      opacity: 0;
+    }
+
+    .animate.show {
+      opacity: 1;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    .animate-from-top.show {
+      animation-name: fadeInTop;
+    }
+
+    .animate-from-bottom.show {
+      animation-name: fadeInBottom;
+    }
+
+    .animate-from-right.show {
+      animation-name: fadeInRight;
+    }
+
+    @keyframes fadeInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInBottom {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+  /* slider gambar next */
+  .slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+#sliderCreativeCell {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+  text-align: center;
+}
+
+/* gambar tetap rapi & responsif */
+.carousel-item img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* tombol navigasi tetap rapi */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+
+    .card {
+      background-color: rgba(0, 0, 0, 0);
+      /* transparan */
+      backdrop-filter: blur(8px);
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      border-width: 2px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(255, 255, 255, 0.2),
+        0 0 35px rgba(255, 254, 254, 0.2);
+    }
+
+    #layanan h2 {
+      font-size: 50px;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 40px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-top: 50px;
+    }
+
+    .logo-layanan {
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    .custom-image {
+      max-width: 100%;
+      /* kecilkan ukuran gambar */
+      height: auto;
+
+    }
+
+    /* animasi  */
+    .animate-left,
+    .animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease-in-out;
+}
+/* animasi masuk dari kiri */
+    .animate-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    } 
+
+    /* animasi masuk dari kanan */
+    .animate-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* animasi slide untuk kontak */
+    .kontak-slide-left {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.6s ease-out;
+    }
+
+    .kontak-slide-right {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.6s ease-out;
+    }
+
+    .kontak-show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.3);
+      /* semi-transparan hitam */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form-control,
+    .btn {
+      border-radius: 10px;
+    }
+
+    /* kontak */
+    #kontak {
+      background-color: transparent;
+      color: white;
+    }
+
+    #kontak h2 {
+      color: white;
+      font-weight: bold;
+    }
+
+    #kontak .form-label {
+      color: white;
+      font-weight: 500;
+    }
+
+    #kontak .form-control {
+      border: 1px solid #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    #kontak .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    #kontak .form-control:focus {
+      border-color: #ffffff;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    }
+
+    #kontak .btn-primary {
+      background-color: #ffffff;
+      color: #000;
+      border-color: #ffffff;
+      transition: 0.3s;
+    }
+
+    #kontak .btn-primary:hover {
+      background-color: #f8f9fa;
+      color: #000;
+      border-color: #f8f9fa;
+    }
+
+    .btn-primary {
+      transition: transform 0.3s ease;
+      /* animasi smooth */
+    }
+
+    .btn-primary:active {
+      background-color: transparent !important;
+      color: #0d6efd;
+      /* biar tulisan tetap terlihat */
+      box-shadow: none;
+      transform: translateY(0);
+      /* hilangkan efek ngangkat saat klik */
+    }
+
+    .btn-primary:hover {
+      background-color: transparent !important;
+      transform: translateY(-5px);
+      /* ngangkat tombol 5px ke atas */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* efek bayangan supaya terangkat */
+      color: white;
+      /* teks jadi putih saat hover */
+    }
+
+
+@media (max-width: 768px) {
+  .animate-left, .animate-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+  }
+}
