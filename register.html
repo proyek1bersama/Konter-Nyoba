@@ -18,7 +18,7 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-     .navbar {
+    .navbar {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       height: 70px;
@@ -34,12 +34,12 @@
     .navbar .nav-link:hover {
       transform: translateY(-3px);
       color: #ffffff;
-      /* warna putih cerah biar kontras */
       text-shadow:
         0 2px 4px rgba(0, 0, 0, 0.7),
         0 4px 8px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.5);
     }
+
     .logo-layanan {
       max-width: 80px;
     }
@@ -67,10 +67,13 @@
       color: #000;
       font-weight: bold;
       border: none;
+       transition: all 0.3s ease;
     }
 
     .btn-success:hover {
-      background-color: #000000;
+      background-color:transparent;
+      color: #fff;
+      border: 2px solid #fff;
     }
 
     .text-center a {
@@ -113,6 +116,7 @@
       </div>
     </div>
   </nav>
+
   <div class="form-container">
     <h2 class="text-center mb-4">Daftar Akun</h2>
     <form action="proses-register.php" method="post">
@@ -125,8 +129,10 @@
       <div class="mb-3">
         <input type="email" name="email" class="form-control" placeholder="Email" required />
       </div>
-      <div class="mb-3">
-        <input type="password" name="password" class="form-control" placeholder="Password" required />
+   
+      <div class="mb-3 position-relative">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" id="togglePassword" style="cursor: pointer; color: rgb(0, 0, 0);"></i>
       </div>
       <div class="d-grid">
         <button type="submit" class="btn btn-success">Daftar</button>
@@ -134,5 +140,18 @@
     </form>
     <p class="text-center mt-3">Sudah punya akun? <a href="login.html">Login di sini</a></p>
   </div>
+
+  <!-- Script untuk toggle show/hide password -->
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.classList.toggle('bi-eye');
+      this.classList.toggle('bi-eye-slash');
+    });
+  </script>
 </body>
 </html>
