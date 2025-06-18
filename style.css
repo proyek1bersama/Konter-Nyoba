@@ -124,9 +124,22 @@ body {
 
 /* ===== HEADER SECTION ===== */
 .header-section {
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 60px 20px;
 }
+
+@media (min-width: 768px) {
+  .header-section {
+    padding: 80px 60px; /* lebih lega di layar sedang */
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-section {
+    padding: 100px 120px; /* lebih lega di layar besar */
+  }
+}
+
 
 .custom-header p {
   text-align: justify;
@@ -320,6 +333,24 @@ body {
   color: #000;
   border-color: #f8f9fa;
 }
+
+.animate-right.show {
+  animation-name: fadeInRight;
+}
+
+.animate-left.show {
+  animation-name: fadeInLeft;
+}
+
+.animate-from-bottom.show {
+  animation-name: fadeInBottom;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
 
 footer {
   background-color: rgba(0, 0, 0, 0.3);
