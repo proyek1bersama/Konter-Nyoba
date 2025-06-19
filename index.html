@@ -209,22 +209,27 @@
   <script>
   // === ACTIVE NAVLINK SAAT SCROLL ===
   window.addEventListener("scroll", function () {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-    let currentSection = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href").includes(currentSection)) {
-        link.classList.add("active");
-      }
-    });
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+  let currentSection = "";
+
+  // cari section terakhir yang scroll-nya sudah lewat atasnya
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const sectionTop = sections[i].offsetTop - 300;
+    if (window.scrollY >= sectionTop) {
+      currentSection = sections[i].getAttribute("id");
+      break;
+    }
+  }
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(currentSection)) {
+      link.classList.add("active");
+    }
   });
+});
+
 
   // === ANIMASI SAAT SCROLL + KONTAK ===
   document.addEventListener("DOMContentLoaded", function () {
