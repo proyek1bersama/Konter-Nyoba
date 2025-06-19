@@ -71,7 +71,7 @@ body {
 /* RESPONSIVE NAV */
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: rgba(235, 220, 255, 0.95); /* ungu pastel transparan */
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     position: absolute;
