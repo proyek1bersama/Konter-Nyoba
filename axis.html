@@ -19,29 +19,39 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       height: 70px;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    .navbar-brand,
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
     .nav-link {
+      position: relative;
       color: #fff !important;
-      font-weight: 50px;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    .navbar .nav-link:hover {
+    .nav-link:hover {
       transform: translateY(-3px);
-      color: #ffffff;
-      /* warna putih cerah biar kontras */
       text-shadow:
         0 2px 4px rgba(0, 0, 0, 0.7),
         0 4px 8px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.5);
     }
 
+    .hero-section {
+      padding-top: 100px;
+    }
+
     /* RESPONSIVE NAV */
     @media (max-width: 768px) {
       .navbar-collapse {
-        background-color: rgba(235, 220, 255, 0.95);
+        background-color: white;
         /* ungu pastel transparan */
         border-radius: 12px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -76,25 +86,8 @@
         text-shadow: none;
         transform: none;
       }
-
-      .nav-link.active {
-        position: relative;
-        color: #000 !important;
-      }
-
-      .nav-link.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 4px;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        /* garis putih elegan */
-        border-radius: 2px;
-      }
     }
-
+    
     .logo-layanan {
       max-width: 80px;
     }
