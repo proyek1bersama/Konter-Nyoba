@@ -2,21 +2,19 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register - Creative Cell</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
     body {
       background: linear-gradient(to right, #a83252, #1a1a2e);
       color: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
     }
 
     .navbar {
@@ -48,15 +46,9 @@
         0 6px 12px rgba(0, 0, 0, 0.5);
     }
 
-    .hero-section {
-      padding-top: 100px;
-    }
-
-    /* RESPONSIVE NAV */
     @media (max-width: 768px) {
       .navbar-collapse {
         background-color: white;
-        /* ungu pastel transparan */
         border-radius: 12px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         position: absolute;
@@ -75,7 +67,6 @@
 
       .nav-link {
         color: #222 !important;
-        /* hitam keabu, biar kontras */
         font-size: 16px;
         font-weight: 600;
         padding: 8px 0;
@@ -86,7 +77,6 @@
 
       .nav-link:hover {
         background-color: rgba(255, 255, 255, 0.5);
-        /* efek hover lembut */
         text-shadow: none;
         transform: none;
       }
@@ -128,72 +118,84 @@
       color: #fff;
       text-decoration: underline;
     }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1rem;
+    }
   </style>
 </head>
 
 <body>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm">
-    <div class="container-fluid px-4">
-      <!-- logo di kiri -->
-      <h2>Creative Cell</h2>
+  <div class="page-wrapper d-flex flex-column min-vh-100">
 
-      <!-- hamburger menu di kanan -->
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm">
+      <div class="container-fluid px-4">
+        <h2>Creative Cell</h2>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- isi menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav text-end">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="keranjang.html" title="Keranjang">
-              <i class="bi bi-cart3 fs-5"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html" title="Login">
-              <i class="bi bi-person-circle fs-5"></i>
-            </a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav text-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="keranjang.html" title="Keranjang">
+                <i class="bi bi-cart3 fs-5"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html" title="Login">
+                <i class="bi bi-person-circle fs-5"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- form register -->
-  <div class="form-container">
-    <h2 class="text-center mb-4">Daftar Akun</h2>
-    <form action="proses-register.php" method="post">
-      <div class="mb-3">
-        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required />
+    <!-- konten utama -->
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-5 pt-4">
+      <div class="form-container">
+        <h2 class="text-center mb-4">Daftar Akun</h2>
+        <form action="proses-register.php" method="post">
+          <div class="mb-3">
+            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required />
+          </div>
+          <div class="mb-3">
+            <input type="text" name="username" class="form-control" placeholder="Username" required />
+          </div>
+          <div class="mb-3 position-relative">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
+              style="cursor: pointer; color: rgb(0, 0, 0);" data-target="password"></i>
+          </div>
+          <div class="mb-3 position-relative">
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+              placeholder="Confirm Password" required />
+            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
+              style="cursor: pointer; color: rgb(0, 0, 0);" data-target="confirm_password"></i>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-success">Daftar</button>
+          </div>
+        </form>
+        <p class="text-center mt-3">Sudah punya akun? <a href="login.html">Login di sini</a></p>
       </div>
-      <div class="mb-3">
-        <input type="text" name="username" class="form-control" placeholder="Username" required />
-      </div>
-      <div class="mb-3 position-relative">
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
-        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
-          style="cursor: pointer; color: rgb(0, 0, 0);" data-target="password"></i>
-      </div>
-      <div class="mb-3 position-relative">
-        <input type="password" name="confirm_password" id="confirm_password" class="form-control"
-          placeholder="Confirm Password" required />
-        <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
-          style="cursor: pointer; color: rgb(0, 0, 0);" data-target="confirm_password"></i>
-      </div>
-      <div class="d-grid">
-        <button type="submit" class="btn btn-success">Daftar</button>
-      </div>
-    </form>
-    <p class="text-center mt-3">Sudah punya akun? <a href="login.html">Login di sini</a></p>
+    </main>
+
+    <!-- footer -->
+    <footer class="text-center">
+      <p>&copy; 2025 Creative Cell. All rights reserved.</p>
+    </footer>
   </div>
 
-  <!-- toggle show/hide password -->
   <script>
     document.querySelectorAll('.toggle-password').forEach(function (icon) {
       icon.addEventListener('click', function () {
@@ -208,7 +210,6 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
