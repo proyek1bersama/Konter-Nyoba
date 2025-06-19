@@ -266,6 +266,7 @@ body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
+
 .animate-left,
 .animate-right {
   opacity: 0;
@@ -292,65 +293,148 @@ body {
 }
 
 /* ===== KONTAK & FOOTER ===== */
-#kontak {
-  background-color: transparent;
-  color: white;
-  padding: 2rem 1rem;
+ /* animasi  */
+    .animate-left,
+    .animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease-in-out;
 }
+/* animasi masuk dari kiri */
+    .animate-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
 
-#kontak h2 {
-  font-weight: bold;
+    .animate-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    } 
+
+    /* animasi masuk dari kanan */
+    .animate-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+  
+
+    /* animasi slide untuk kontak */
+    .kontak-slide-left {
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.6s ease-out;
+    }
+
+    .kontak-slide-right {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.6s ease-out;
+    }
+
+    .kontak-show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.3);
+      /* semi-transparan hitam */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .form-control,
+    .btn {
+      border-radius: 10px;
+    }
+
+    /* kontak */
+    #kontak {
+      background-color: transparent;
+      color: white;
+        scroll-margin-top: 100px;
+    }
+
+    #kontak h2 {
+      color: white;
+      font-weight: bold;
+    }
+
+    #kontak .form-label {
+      color: white;
+      font-weight: 500;
+    }
+
+    #kontak .form-control {
+      border: 1px solid #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    #kontak .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    #kontak .form-control:focus {
+      border-color: #ffffff;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    }
+
+    #kontak .btn-primary {
+      background-color: #ffffff;
+      color: #000;
+      border-color: #ffffff;
+      transition: 0.3s;
+    }
+
+    #kontak .btn-primary:hover {
+      background-color: #f8f9fa;
+      color: #ffffff;
+      border-color: #f8f9fa;
+    }
+
+    .btn-primary {
+      transition: transform 0.3s ease;
+      /* animasi smooth */
+    }
+
+    .btn-primary:active {
+      background-color: transparent !important;
+      color: #0d6efd;
+      /* biar tulisan tetap terlihat */
+      box-shadow: none;
+      transform: translateY(0);
+      /* hilangkan efek ngangkat saat klik */
+    }
+
+    .btn-primary:hover {
+      background-color: transparent !important;
+      transform: translateY(-5px);
+      /* ngangkat tombol 5px ke atas */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      /* efek bayangan supaya terangkat */
+      color: white;
+      /* teks jadi putih saat hover */
+    }
+
+    @media (max-width: 768px) {
+  #kontak {
+    scroll-margin-top: 100px; /* misalnya navbar lebih tinggi di mobile */
+  }
 }
-
-#kontak .form-label {
-  font-weight: 500;
-}
-
-#kontak .form-control {
-  border: 1px solid #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-#kontak .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-#kontak .form-control:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
-}
-
-#kontak .btn-primary {
-  background-color: #ffffff;
-  color: #000;
-  border-color: #ffffff;
-  transition: 0.3s;
-}
-
-#kontak .btn-primary:hover {
-  background-color: #f8f9fa;
-  color: #ffffff;
-  border-color: #f8f9fa;
-}
-
-.animate-right.show {
-  animation-name: fadeInRight;
-}
-
-.animate-left.show {
-  animation-name: fadeInLeft;
-}
-
-.animate-from-bottom.show {
-  animation-name: fadeInBottom;
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
 
 footer {
   background-color: rgba(0, 0, 0, 0.3);
