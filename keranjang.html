@@ -114,8 +114,13 @@
 
   </div>
 
+  <div class="text-center mt-4">
+  <button id="checkoutBtn" class="btn btn-dark px-4 py-2">Checkout</button>
+</div>
+
   <footer class="text-center py-3 mt-5 shadow-sm">
-    <small>&copy; 2025 Creative Cell. All rights reserved.</small>
+    <p>&copy; 2025 Creative Cell. All rights reserved.</p>
+    <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
   </footer>
 
   <script>
@@ -178,6 +183,13 @@
     // window.location.href = "sukses.html";
   }
 });
+
+// Script untuk aksi tombol checkout
+  document.getElementById('checkoutBtn').addEventListener('click', function() {
+    // Contoh: munculkan alert konfirmasi
+    alert('Terima kasih! Checkout berhasil. Kami akan memproses pesanan Anda.');
+    // Nanti bisa diarahkan ke halaman pembayaran atau invoice
+  });
 
   </script>
 
