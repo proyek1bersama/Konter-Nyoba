@@ -109,14 +109,14 @@
     <div id="keranjangContainer" class="row"></div>
     <div id="kosongText" class="text-center text-light mt-5" style="display: none;">Keranjang kamu masih kosong.</div>
     <div class="text-center mt-4">
-  <button id="beliSemuaBtn" class="btn btn-success px-4 fw-bold" style="display: none;">Beli Sekarang</button>
-</div>
+      <button id="beliSemuaBtn" class="btn btn-success px-4 fw-bold" style="display: none;">Beli Sekarang</button>
+    </div>
 
   </div>
 
   <div class="text-center mt-4">
-  <button id="checkoutBtn" class="btn btn-dark px-4 py-2">Checkout</button>
-</div>
+    <button id="checkoutBtn" class="btn btn-dark px-4 py-2">Checkout</button>
+  </div>
 
   <footer class="text-center py-3 mt-5 shadow-sm">
     <p>&copy; 2025 Creative Cell. All rights reserved.</p>
@@ -168,28 +168,28 @@
     tampilkanKeranjang();
 
     document.getElementById("checkoutBtn").addEventListener("click", () => {
-  if (keranjang.length === 0) {
-    alert("Keranjang masih kosong.");
-    return;
-  }
+      if (keranjang.length === 0) {
+        alert("Keranjang masih kosong.");
+        return;
+      }
 
-  const konfirmasi = confirm("Kamu yakin ingin membeli semua item di keranjang?");
-  if (konfirmasi) {
-    localStorage.removeItem("keranjang");
-    keranjang = [];
-    tampilkanKeranjang();
-    alert("Pembelian berhasil! Terima kasih.");
-    // kalau mau redirect ke halaman sukses, bisa pakai ini:
-    // window.location.href = "sukses.html";
-  }
-});
+      const konfirmasi = confirm("Kamu yakin ingin membeli semua item di keranjang?");
+      if (konfirmasi) {
+        localStorage.removeItem("keranjang");
+        keranjang = [];
+        tampilkanKeranjang();
+        alert("Pembelian berhasil! Terima kasih.");
+        // kalau mau redirect ke halaman sukses, bisa pakai ini:
+        // window.location.href = "sukses.html";
+      }
+    });
 
-// Script untuk aksi tombol checkout
-  document.getElementById('checkoutBtn').addEventListener('click', function() {
-    // Contoh: munculkan alert konfirmasi
-    alert('Terima kasih! Checkout berhasil. Kami akan memproses pesanan Anda.');
-    // Nanti bisa diarahkan ke halaman pembayaran atau invoice
-  });
+    // Script untuk aksi tombol checkout
+    document.getElementById('checkoutBtn').addEventListener('click', function () {
+      // Contoh: munculkan alert konfirmasi
+      alert('Terima kasih! Checkout berhasil. Kami akan memproses pesanan Anda.');
+      // Nanti bisa diarahkan ke halaman pembayaran atau invoice
+    });
 
   </script>
 
